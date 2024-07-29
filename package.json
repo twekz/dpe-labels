@@ -1,0 +1,25 @@
+{
+  "name": "dpe-labels",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint --fix"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.7",
+    "@vitest/coverage-v8": "^2.0.4",
+    "eslint": "^9.8.0",
+    "lodash": "^4.17.21",
+    "neostandard": "^0.11.1",
+    "sass": "^1.77.8",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.4",
+    "vitest": "^2.0.4"
+  }
+}

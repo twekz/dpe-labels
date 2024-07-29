@@ -1,0 +1,14 @@
+.dpe-row {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+
+  .dpe-col {
+    display: block;
+    flex: 1 1 320px;
+  }
+
+  .dpe-col + .col {
+    flex-basis: 200px;
+  }
+}

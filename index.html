@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <style>
+      :root {
+        font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        font-synthesis: none;
+        text-rendering: optimizelegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #eee;
+      }
+
+      body {
+        margin: 0;
+        display: flex;
+        place-items: center;
+        min-width: 320px;
+        min-height: 100vh;
+      }
+
+      main {
+        width: 80vw;
+        padding: 1em 2em;
+        max-width: 1280px;
+        margin: 0 auto;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Démo DPE</h1>
+      <h2>Diagnostique de performance énergétique (CEP & EGES)</h2>
+      <div data-dpe data-cep="420" data-eges="42"></div>
+      <div data-dpe="toto" data-cep="98" data-eges="3"></div>
+
+      <h2>Diagnostique de performance énergétique (CEP)</h2>
+      <div data-dpe="cep" data-cep="123" data-eges="45"></div>
+
+      <h2>Consommation de gaz à effet de serre (EGES)</h2>
+      <div data-dpe="eges" data-eges="21"></div>
+
+      <div data-dpe="cep" data-cep="XXX" data-eges="45"></div>
+    </main>
+    <script type="module" src="/lib/main.ts"></script>
+  </body>
+</html>
