@@ -14,4 +14,10 @@ export default defineConfig({
       },
     },
   },
+  test: {
+    coverage: {
+      enabled: true,
+      include: ['lib/**'],
+    },
+  },
 });

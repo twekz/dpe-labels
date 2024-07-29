@@ -21,7 +21,6 @@
     "preview": "vite preview",
     "test:dev": "vitest",
     "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage",
     "lint": "eslint --fix",
     "prepare": "husky"
   },
