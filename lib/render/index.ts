@@ -21,6 +21,5 @@ export function renderDPE (globalGrade: string, egesGrade: string, cep: number, 
   <div class="dpe-col">
     ${renderEGES(egesGrade, eges)}
   </div>
-</div>
-${renderSVGSprite()}`;
+</div>`;
 }
