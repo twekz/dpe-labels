@@ -29,6 +29,13 @@
         margin: 0 auto;
         background-color: white;
       }
+
+      h2 {
+        margin-block-start: 3em;
+        margin-block-end: 1em;
+        padding-bottom: .2em;
+        border-bottom: .2em solid #eee;
+      }
     </style>
   </head>
   <body>
@@ -39,10 +46,10 @@
       <div data-dpe="toto" data-cep="98" data-eges="3"></div>
 
       <h2>Diagnostique de performance énergétique (CEP)</h2>
-      <div data-dpe="cep" data-cep="123" data-eges="45"></div>
+      <div data-dpe="cep" data-cep="123" data-eges="45" style="max-width:640px;border:1px solid black;font-family: 'Comic Sans MS'"></div>
 
       <h2>Consommation de gaz à effet de serre (EGES)</h2>
-      <div data-dpe="eges" data-eges="21"></div>
+      <div data-dpe="eges" data-eges="21" style="max-width:340px;border:1px solid black"></div>
 
       <div data-dpe="cep" data-cep="XXX" data-eges="45"></div>
     </main>

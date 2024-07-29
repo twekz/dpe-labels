@@ -2,7 +2,17 @@
   "name": "dpe-labels",
   "private": true,
   "version": "0.0.0",
+  "license": "GPL-3.0-or-later",
   "type": "module",
+  "files": ["dist"],
+  "main": "./dist/dpe-labels.umd.cjs",
+  "module": "./dist/dpe-labels.js",
+  "exports": {
+    ".": {
+      "import": "./dist/dpe-labels.js",
+      "require": "./dist/dpe-labels.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

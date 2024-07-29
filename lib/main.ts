@@ -1,4 +1,4 @@
-import './style/index.scss';
+import './style.scss';
 import { renderDPE, renderSVGSprite } from './render';
 import { renderCEP } from './render/cep.ts';
 import { renderEGES } from './render/eges.ts';
@@ -14,14 +14,10 @@ function ready (fn: () => void): void {
 }
 
 ready(() => {
-  // document.querySelector<HTMLDivElement>('#app')!.innerHTML = render(211, 12)
-
   // Init: load SVG sprite
   document.body.insertAdjacentHTML('beforeend', renderSVGSprite());
 
-  // Init: load CSS?
-
-  // Detect all divs
+  // Detect all DPE divs
   const instances: NodeListOf<HTMLDivElement> = document.querySelectorAll('div[data-dpe]');
 
   // Render

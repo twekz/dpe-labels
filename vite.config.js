@@ -7,7 +7,11 @@ export default defineConfig({
       entry: resolve(__dirname, 'lib/main.ts'),
       name: 'dpe-labels',
       fileName: 'dpe-labels',
-      // fileName: (format) => `YOUR_LIBRARY_NAME.${format}.js`,
+    },
+    rollupOptions: {
+      output: {
+        assetFileNames: 'dpe-labels.[ext]',
+      },
     },
   },
 });
