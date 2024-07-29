@@ -27,4 +27,12 @@ export function getLowestGrade (cepGrade: DPEGrade, egesGrade: DPEGrade): DPEGra
   return GRADES[Math.max(GRADES.indexOf(cepGrade), GRADES.indexOf(egesGrade))];
 }
 
-// export function getDiagnosisFromValues(cep: number, eges: number): string {}
+export function getValuesRangeFromGrade (grade: DPEGrade, steps: number[]): string {
+  const pos = GRADES.indexOf(grade);
+  const floor = pos > 0 ? steps[pos - 1] : 0;
+  if (pos === steps.length) {
+    return `${floor}+`;
+  }
+  const ceil = steps[pos] - 1;
+  return `${floor}–${ceil}`;
+}
