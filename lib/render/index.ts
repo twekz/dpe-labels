@@ -1,5 +1,6 @@
 import { renderCEP } from './cep.ts';
 import { renderEGES } from './eges.ts';
+import { type DPEGrade } from '../logic.ts';
 
 export function renderSVGSprite (): string {
   return `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -12,7 +13,7 @@ export function renderSVGSprite (): string {
 </svg>`;
 }
 
-export function renderDPE (globalGrade: string, egesGrade: string, cep: number, eges: number): string {
+export function renderDPE (globalGrade: DPEGrade, egesGrade: DPEGrade, cep: number, eges: number): string {
   return `
 <div class="dpe-row">
   <div class="dpe-col">
