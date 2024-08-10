@@ -38,6 +38,7 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
   --dpe-bar-offset: calc(var(--dpe-bar-height--cep) * #{$cepBarEndSizeRatio});
   --dpe-bar-gap: 0.25rem;
   --dpe-border-color: var(--dpe-bar-color);
+  --dpe-text-stroke-color: transparent;
 }
 
 .dpe {
@@ -188,6 +189,18 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
     color: white;
     font-size: calc(var(--dpe-bar-height) * 0.6);
     font-weight: bold;
+    // Avoid weird overlapping text-stroke issue using text-shadow border hack:
+    $stroke1: $borderWidth;
+    $stroke2: $borderWidth * 0.75;
+    text-shadow:
+      $stroke1 0 var(--dpe-text-stroke-color),
+      -1*$stroke1 0 var(--dpe-text-stroke-color),
+      0 $stroke1 var(--dpe-text-stroke-color),
+      0 -1*$stroke1 var(--dpe-text-stroke-color),
+      $stroke2 $stroke2 var(--dpe-text-stroke-color),
+      -1*$stroke2 -1*$stroke2 var(--dpe-text-stroke-color),
+      $stroke2 -1*$stroke2 var(--dpe-text-stroke-color),
+      -1*$stroke2 $stroke2 var(--dpe-text-stroke-color);
   }
 
   &-bar-end-shape {
@@ -232,6 +245,7 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
 
   &-table-row.active {
     --dpe-border-color: #{$borderColor};
+    --dpe-text-stroke-color: var(--dpe-color);
   }
 
   &--cep &-table-row.active {
