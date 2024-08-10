@@ -68,6 +68,10 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
     font-weight: bold;
   }
 
+  & figcaption {
+    margin-bottom: 0.5em;
+  }
+
   &-table {
     display: table;
   }
@@ -117,10 +121,10 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
 
 
     &-title {
-      font-size: .55em;
+      font-size: var(--dpe-legend-font-size, .6em); // TODO add to config
       left: 0;
       right: 0;
-      margin-bottom: 1em;
+      margin-bottom: 2em;
 
       > div {
         color: gray;
@@ -129,10 +133,11 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
 
     &-nb {
       font-size: 1.5em;
+      font-weight: bolder; // TODO add to config
     }
 
     &-legend {
-      font-size: .55em;
+      font-size: var(--dpe-legend-font-size, .6em);
     }
   }
 
@@ -141,9 +146,12 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
   }
 
   &-legend {
-    font-size: .625em;
-    line-height: 1.4;
-    margin: .5em 0;
+    font-size: var(--dpe-legend-font-size, .6em);
+    line-height: 1.2;
+  }
+
+  &-legend &-table-cell {
+    padding: .25em 0;
   }
 
   &--cep &-legend {
