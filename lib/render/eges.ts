@@ -37,7 +37,9 @@ export function renderEGES (egesGrade: string, eges: number): string {
       <div class="dpe-table-row dpe-legend">
         <div class="dpe-table-cell">Peu d'émissions de CO<sub>2</sub></div>
       </div>
-      ${renderEGESRows(egesGrade, eges)}
+      <div class="dpe-table-row-group">
+        ${renderEGESRows(egesGrade, eges)}
+      </div>
       <div class="dpe-table-row dpe-legend">
         <div class="dpe-table-cell">Émissions de CO<sub>2</sub> très importantes</div>
       </div>

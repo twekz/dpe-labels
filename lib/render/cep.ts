@@ -39,6 +39,11 @@ function renderCEPRows (grade: string, cep: number, eges: number) {
   return rows;
 }
 
+function renderPassoireLegend (globalGrade: string): string {
+  if (globalGrade === 'F' || globalGrade === 'G') return '';
+  return '<div class="dpe-passoire-legend">passoire énergétique</div>';
+}
+
 export function renderCEP (globalGrade: string, cep: number, eges: number) {
   return `<figure class="dpe dpe--cep">
       <div class="dpe-table">
@@ -46,7 +51,10 @@ export function renderCEP (globalGrade: string, cep: number, eges: number) {
           <div class="dpe-table-cell"></div>
           <div class="dpe-table-cell">Logement extrêmement performant</div>
         </div>
-        ${renderCEPRows(globalGrade, cep, eges)}
+        <div class="dpe-table-row-group">
+          ${renderCEPRows(globalGrade, cep, eges)}
+          ${renderPassoireLegend(globalGrade)}
+        </div>
         <div class="dpe-table-row dpe-legend">
           <div class="dpe-table-cell"></div>
           <div class="dpe-table-cell">Logement extrêmement peu performant</div>
