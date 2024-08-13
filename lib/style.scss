@@ -98,6 +98,22 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
     width: 60%;
   }
 
+  &--eges &-table-row {
+    display: flex;
+  }
+
+  &--eges &-table-cell {
+    flex: 1 1 auto;
+    display: block;
+    width: unset;
+  }
+
+  &--eges &-table-cell--bar {
+    flex: 0 0 auto;
+    display: block;
+    width: unset;
+  }
+
   &-values {
     display: flex;
     flex-flow: row nowrap;
@@ -116,7 +132,6 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
     padding: 0 .25rem;
     font-weight: bold;
     position: relative;
-    z-index: 100;
     line-height: 1.2;
 
 
@@ -133,6 +148,7 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
 
     &-nb {
       font-size: 1.5em;
+      line-height: 1;
       font-weight: bolder; // TODO add to config
     }
 
@@ -178,8 +194,12 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
 
   @for $i from 1 through 7 {
     $rate: nth($rates, $i);
-    &-table-row:nth-of-type(#{$i + 1}) &-table-cell--bar {
+    &--cep &-table-row:nth-of-type(#{$i + 1}) &-table-cell--bar {
       padding-right: calc((var(--dpe-bar-offset) + var(--dpe-bar-gap)) * 1.5 * #{$rate} + #{$borderWidth});
+    }
+
+    &--eges &-table-row:nth-of-type(#{$i + 1}) &-table-cell--bar {
+      flex-basis: calc(13% + $i * 7%);
     }
   }
 
@@ -193,7 +213,7 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
     flex: 1 1 auto;
     border: $borderWidth solid var(--dpe-border-color);
     border-right: none;
-    padding: 0 .5rem;
+    padding: 0 0 0 .5rem;
     color: white;
     font-size: calc(var(--dpe-bar-height) * 0.6);
     font-weight: bold;
@@ -241,6 +261,23 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
     flex: 0 0 calc(var(--dpe-bar-height) * 0.5);
   }
 
+  &--eges &-value {
+    $offset: 1.5em;
+    display: inline-block;
+    margin-left: $offset;
+    text-align: left;
+
+    &:before {
+      display: block;
+      position: absolute;
+      content: "";
+      top: calc(50% + #{$borderWidth});
+      border-top: $borderWidth solid var(--dpe-border-color);
+      width: $offset;
+      left: -1 * $offset;
+    }
+  }
+
   @for $i from 1 through 7 {
     &--cep &-table-row:nth-of-type(#{$i+1}) {
       --dpe-bar-color: #{nth($dpe-cep-colors, $i)};
@@ -262,7 +299,7 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
   }
 
   &--eges &-table-row.active {
-    --dpe-bar-height: 3.5rem;
+    --dpe-bar-height: 3rem;
   }
 
   &-passoire.active &-bar::after {
