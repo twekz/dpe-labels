@@ -2,12 +2,18 @@
   "name": "dpe-labels",
   "private": true,
   "version": "0.0.0",
+  "author": "Sam Lemaresquier <contact@samlem.com> (samlem.com)",
+  "description": "Petit plugin JS pour la génération et l'affichage de diagnostics de performance énergétique (DPE) sur le web. Léger, responsive, flexible.",
   "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twekz/dpe-labels"
+  },
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/dpe-labels.umd.cjs",
+  "browser": "./dist/dpe-labels.umd.cjs",
   "module": "./dist/dpe-labels.js",
   "exports": {
     ".": {
