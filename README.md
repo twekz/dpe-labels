@@ -35,17 +35,17 @@ npm install dpe-labels
 ## Développement
 
 ```shell
-$ npm install
+npm install
 ```
 
 ```shell
 # Lance un serveur de dev pour index.html avec HMR
-$ npm run dev
+npm run dev
 ```
 
 ```shell
 # Lance les tests en mode 'watch'
-$ npm run test:dev
+npm run test:dev
 ```
 
 ## TODO
