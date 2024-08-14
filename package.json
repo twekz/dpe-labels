@@ -11,6 +11,7 @@
   "module": "./dist/dpe-labels.js",
   "exports": {
     ".": {
+      "types": "./dist/dpe-labels.d.ts",
       "import": "./dist/dpe-labels.js",
       "require": "./dist/dpe-labels.umd.cjs"
     }

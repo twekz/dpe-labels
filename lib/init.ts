@@ -1,4 +1,3 @@
-import './style.scss';
 import { renderDPE, renderSVGSprite } from './render';
 import { renderCEP } from './render/cep.ts';
 import { renderEGES } from './render/eges.ts';
