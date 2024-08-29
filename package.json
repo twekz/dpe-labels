@@ -27,7 +27,7 @@
     "config": "tsx config/index.ts",
     "git-commit": "cz",
     "lint": "eslint --fix",
-    "prepare": "husky",
+    "prepare": "husky && npm run config",
     "prepublishOnly": "npm run build",
     "preview": "vite preview",
     "release": "dotenv -- release-it",
