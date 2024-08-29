@@ -2,7 +2,7 @@
 
 **Petit plugin JS pour la génération et l'affichage de diagnostics de performance énergétique (DPE) sur le web. Léger, responsive, flexible.**
 
-Important : l'affichage simple est à jour selon la dernière réglementation ([arrêté du 25 mars 2024](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049446315)), mais certaines options ne sont pas encore gérées (voir la [section TODO](#TODO) de ce fichier). 
+📜 L'affichage est à jour suivant la dernière réglementation ([arrêté du 25 mars 2024](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049446315)) entrée en vigueur le 1er juillet 2024. 
 
 🇬🇧 _Since this plugin is strictly targeted for the French market, its documentation is written in French. Please let me know if any English-speaking documentation is needed._
 
@@ -18,7 +18,7 @@ npm install dpe-labels
 
 ### Utilisation
 
-1. Inclure les fichiers `dpe-labels.css` et `dpe-labels.js` dans votre page HTML ou dans votre bundle.
+1. Inclure les fichiers `dpe-labels.css` et `dpe-labels.js` dans votre page HTML.
 2. Ajouter les placeholders aux endroits souhaités, avec les valeurs nécessaires :
 
 ```html
@@ -61,7 +61,7 @@ npm run test:dev
 - [x] ~~Mise à jour réglementaire complète :~~
   - [x] ~~Ajustement des seuils pour les biens de petites surfaces (de 8 à 40 m2),~~
   - [x] ~~Ajustement des seuils pour les biens en altitude.~~
-- [ ] Ajout d'une option pour afficher la note (lettre) sans renseigner de seuil.
+- [ ] Ajout d'une option pour afficher la note (lettre) sans renseigner de valeur chiffrée.
 - [ ] Gestion des DPE vierges (affichage des graphiques sans note).
 - [ ] Meilleure optimisation du HTML et CSS générés.
 - [ ] Documentation des options disponibles.
@@ -72,7 +72,7 @@ npm run test:dev
 ### Projets annexes :
 
 - [ ] Création d'un wrapper pour composants React.
-- [ ] Création d'un plugin WordPress.
+- [ ] Création d'un plugin WordPress **(EN COURS)**
 
 ## Auteur
 
