@@ -149,6 +149,7 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
 
       > div {
         color: var(--dpe-color-gray);
+        white-space: nowrap;
       }
     }
 
