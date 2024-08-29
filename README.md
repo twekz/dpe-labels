@@ -30,6 +30,12 @@ npm install dpe-labels
 
 <!-- Rendu EGES uniquement : -->
 <div data-dpe="eges" data-eges="45"></div>
+
+<!-- DPE ≥ 800m d'altitude : -->
+<div data-dpe data-cep="123" data-eges="45" data-altitude></div>
+
+<!-- DPE surface < 40m2 : -->
+<div data-dpe data-cep="123" data-eges="45" data-surface="10"></div>
 ```
 
 ## Développement
@@ -52,9 +58,9 @@ npm run test:dev
 
 ### À faire avant la première release majeure :
 
-- [ ] Mise à jour réglementaire complète :
-  - [ ] Ajustement des seuils pour les biens de petites surfaces (de 8 à 40 m2),
-  - [ ] Ajustement des seuils pour les biens en altitude.
+- [x] ~~Mise à jour réglementaire complète :~~
+  - [x] ~~Ajustement des seuils pour les biens de petites surfaces (de 8 à 40 m2),~~
+  - [x] ~~Ajustement des seuils pour les biens en altitude.~~
 - [ ] Ajout d'une option pour afficher la note (lettre) sans renseigner de seuil.
 - [ ] Gestion des DPE vierges (affichage des graphiques sans note).
 - [ ] Meilleure optimisation du HTML et CSS générés.

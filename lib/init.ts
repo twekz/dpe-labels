@@ -1,7 +1,8 @@
 import { renderDPE, renderSVGSprite } from './render';
 import { renderCEP } from './render/cep.ts';
 import { renderEGES } from './render/eges.ts';
-import { getCEP, getEGES, getLowestGrade } from './logic.ts';
+import { getGrade, getLowestGrade } from './logic.ts';
+import { getSteps } from './steps.ts';
 
 // https://youmightnotneedjquery.com/#ready
 function ready (fn: () => void): void {
@@ -22,7 +23,11 @@ ready(() => {
   // Render
   const errors: string[] = [];
   instances.forEach(instance => {
-    const { dpe: type, cep, eges } = instance.dataset;
+    const { dpe: type, cep, eges, altitude: _altitude, surface: _surface } = instance.dataset;
+
+    const altitude = _altitude != null;
+    const surface = _surface != null && !isNaN(parseInt(_surface)) ? parseInt(_surface) : undefined;
+    const steps = getSteps(altitude, surface);
 
     // EGES
 
@@ -37,7 +42,7 @@ ready(() => {
       return;
     }
 
-    const egesGrade = getEGES(egesVal);
+    const egesGrade = getGrade(egesVal, steps.eges);
 
     if (type === 'eges') {
       instance.innerHTML = renderEGES(egesGrade, egesVal);
@@ -57,7 +62,7 @@ ready(() => {
       return;
     }
 
-    const cepGrade = getCEP(cepVal);
+    const cepGrade = getGrade(cepVal, steps.cep);
     const globalGrade = getLowestGrade(cepGrade, egesGrade);
 
     if (type === 'cep') {
