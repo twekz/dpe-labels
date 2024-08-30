@@ -23,7 +23,7 @@ ready(() => {
   // Render
   const errors: string[] = [];
   instances.forEach(instance => {
-    const { dpe: type, cep, eges, altitude: _altitude, surface: _surface } = instance.dataset;
+    const { dpe: type, dpeCep: cep, dpeEges: eges, dpeAltitude: _altitude, dpeSurface: _surface } = instance.dataset;
 
     const altitude = _altitude != null;
     const surface = _surface != null && !isNaN(parseInt(_surface)) ? parseInt(_surface) : undefined;
