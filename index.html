@@ -42,50 +42,50 @@
     <main>
       <h1>Démo DPE</h1>
       <h2>Diagnostique de performance énergétique (CEP & EGES)</h2>
-      <div data-dpe data-cep="420" data-eges="42"></div>
-      <div data-dpe="foobar" data-cep="98" data-eges="3"></div>
+      <div data-dpe data-dpe-cep="420" data-dpe-eges="42"></div>
+      <div data-dpe="foobar" data-dpe-cep="98" data-dpe-eges="3"></div>
 
       <h2>DPE surface &lt; 40m<sup>2</sup></h2>
       <h3>12m<sup>2</sup> : CEP 111 + EGES 8 = A + A (C + B par défaut)</h3>
-      <div data-dpe data-cep="111" data-eges="8" data-surface="12"></div>
-      <div data-dpe data-cep="111" data-eges="8" style="opacity: 0.5"></div>
+      <div data-dpe data-dpe-cep="111" data-dpe-eges="8" data-dpe-surface="12"></div>
+      <div data-dpe data-dpe-cep="111" data-dpe-eges="8" style="opacity: 0.5"></div>
 
 
       <h2>DPE altitude &ge; 800m </h2>
       <h3>CEP 420 + EGES 100 = F + E (G + F par défaut)</h3>
-      <div data-dpe data-cep="420" data-eges="70" data-altitude></div>
-      <div data-dpe data-cep="420" data-eges="70" style="opacity: 0.5"></div>
+      <div data-dpe data-dpe-cep="420" data-dpe-eges="70" data-dpe-altitude></div>
+      <div data-dpe data-dpe-cep="420" data-dpe-eges="70" style="opacity: 0.5"></div>
 
       <h2>DPE altitude &ge; 800m & surface &lt; 40m<sup>2</sup></h2>
       <h3>23m<sup>2</sup> : CEP 426 + EGES 82 = E + E</h3>
-      <div data-dpe data-cep="426" data-eges="82" data-altitude data-surface="23"></div>
+      <div data-dpe data-dpe-cep="426" data-dpe-eges="82" data-dpe-altitude data-dpe-surface="23"></div>
       <table>
         <tr>
           <td><strong>Par défaut</strong></td>
           <td>
-            <div data-dpe data-cep="426" data-eges="82" style="opacity: 0.5"></div>
+            <div data-dpe data-dpe-cep="426" data-dpe-eges="82" style="opacity: 0.5"></div>
           </td>
         </tr>
         <tr>
           <td><strong>Altitude (sans surface)</strong></td>
           <td>
-            <div data-dpe data-cep="426" data-eges="82" data-altitude style="opacity: 0.5"></div>
+            <div data-dpe data-dpe-cep="426" data-dpe-eges="82" data-dpe-altitude style="opacity: 0.5"></div>
           </td>
         </tr>
         <tr>
           <td><strong>Surface (sans altitude)</strong></td>
           <td>
-            <div data-dpe data-cep="426" data-eges="82" data-surface="23" style="opacity: 0.5"></div>
+            <div data-dpe data-dpe-cep="426" data-dpe-eges="82" data-dpe-surface="23" style="opacity: 0.5"></div>
           </td>
         </tr>
       </table>
 
       <h2>Diagnostique de performance énergétique (CEP)</h2>
-      <div data-dpe="cep" data-cep="123" data-eges="45" style="max-width:640px;border:1px solid black;font-family: 'Comic Sans MS'"></div>
+      <div data-dpe="cep" data-dpe-cep="123" data-dpe-eges="45" style="max-width:640px;border:1px solid black;font-family: 'Comic Sans MS'"></div>
 
       <h2>Consommation de gaz à effet de serre (EGES)</h2>
-      <div data-dpe="eges" data-eges="21" style="max-width:340px;border:1px solid black"></div>
-      <div data-dpe="eges" data-eges="210" style="max-width:340px;border:1px solid black"></div>
+      <div data-dpe="eges" data-dpe-eges="21" style="max-width:340px;border:1px solid black"></div>
+      <div data-dpe="eges" data-dpe-eges="210" style="max-width:340px;border:1px solid black"></div>
 
       <h2>Error</h2>
       <div data-dpe="cep" data-cep="XXX" data-eges="45" style="border:1px solid black"></div>
