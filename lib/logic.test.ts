@@ -1,5 +1,8 @@
 import { expect, it, describe } from 'vitest';
-import { getPosition, getGrade, CEP_STEPS, getLowestGrade, getValuesRangeFromGrade, EGES_STEPS } from './logic.ts';
+import { getGrade, getPosition, getLowestGrade, getValuesRangeFromGrade } from './logic.ts';
+
+const CEP_STEPS = [70, 110, 180, 250, 330, 420];
+const EGES_STEPS = [6, 11, 30, 50, 70, 100];
 
 describe('getPosition()', () => {
   it('should return the correct position in an array', () => {

@@ -28,3 +28,6 @@ coverage
 
 # Environment variables
 .env
+
+# Compiled config values
+lib/config.json
