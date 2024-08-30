@@ -1,6 +1,6 @@
 import { GRADES } from '../logic.ts';
 
-function renderEGESRow (grade: string, _row: string, eges: number): string {
+function renderEGESRow (grade: string, _row: string, eges: string): string {
   const active = grade === _row;
   let row = `<div class="dpe-table-row${active ? ' active' : ''}">
   <div class="dpe-table-cell--bar">
@@ -22,7 +22,7 @@ function renderEGESRow (grade: string, _row: string, eges: number): string {
   return row;
 }
 
-function renderEGESRows (grade: string, eges: number): string {
+function renderEGESRows (grade: string, eges: string): string {
   let rows = '';
   GRADES.forEach((row) => {
     rows += renderEGESRow(grade, row, eges);
@@ -30,7 +30,7 @@ function renderEGESRows (grade: string, eges: number): string {
   return rows;
 }
 
-export function renderEGES (egesGrade: string, eges: number): string {
+export function renderEGES (egesGrade: string, eges: string): string {
   return `<figure class="dpe dpe--eges">
     <figcaption>* Dont émissions de gaz à effet de serre</figcaption>
     <div class="dpe-table">
