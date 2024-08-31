@@ -1,16 +1,8 @@
 import { renderSVGSprite } from './render';
-import initDPE, { type DPEDataset } from './init.ts';
+import initDPE from './init.ts';
+import parseOptions, { type DPEDataset } from './dataset.ts';
 
-// https://youmightnotneedjquery.com/#ready
-function ready (fn: () => void): void {
-  if (document.readyState !== 'loading') {
-    fn();
-  } else {
-    document.addEventListener('DOMContentLoaded', fn);
-  }
-}
-
-ready(() => {
+export function initAllDPE () {
   // Init: load SVG sprite
   document.body.insertAdjacentHTML('beforeend', renderSVGSprite());
 
@@ -20,6 +12,9 @@ ready(() => {
   // Render
   instances.forEach(instance => {
     // Type can be cast because of the document.querySelectorAll() selector above:
-    instance.innerHTML = initDPE(instance.dataset as unknown as DPEDataset);
+    const options = parseOptions(instance.dataset as unknown as DPEDataset);
+    instance.innerHTML = initDPE(options);
   });
-});
+}
+
+initAllDPE();

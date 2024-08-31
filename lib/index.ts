@@ -1,2 +1,2 @@
 import './style.scss';
-import './dom.ts';
+export { initAllDPE as dpeLabels } from './dom.ts';

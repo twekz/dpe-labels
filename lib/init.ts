@@ -1,19 +1,7 @@
 import { getSteps } from './steps.ts';
 import { type DPEGrade, getGrade, getLowestGrade, getValuesRangeFromGrade } from './logic.ts';
 import { renderDPE, renderCEP, renderEGES } from './render';
-import parseOptions from './dataset.ts';
 import { isDpeGrade } from './utils.ts';
-
-export interface DPEDataset {
-  dpe: string;
-  dpeCep?: string;
-  dpeCepGrade?: string;
-  dpeEges?: string;
-  dpeEgesGrade?: string;
-  dpeAltitude?: string;
-  dpeSurface?: string;
-  dpeMessage?: string;
-}
 
 export type DPEType = 'full' | 'cep' | 'eges';
 
@@ -51,7 +39,7 @@ function computeDpeGraphParams (_val: number | undefined, _grade: DPEGrade | und
   return { value, grade };
 }
 
-function initDPE (dataset: DPEDataset): string {
+function initDPE (options: DPEOptions): string {
   const {
     type,
     cepValue: _cepValue,
@@ -60,7 +48,7 @@ function initDPE (dataset: DPEDataset): string {
     egesGrade: _egesGrade,
     altitude,
     surface,
-  } = parseOptions(dataset);
+  } = options;
 
   const steps = getSteps(altitude, surface);
 

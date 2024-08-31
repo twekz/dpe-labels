@@ -1,6 +1,17 @@
-import { type DPEDataset, type DPEOptions, type DPEType } from './init.ts';
+import { type DPEOptions, type DPEType } from './init.ts';
 import { isDpeGrade } from './utils.ts';
 import { type DPEGrade } from './logic.ts';
+
+export interface DPEDataset {
+  dpe: string;
+  dpeCep?: string;
+  dpeCepGrade?: string;
+  dpeEges?: string;
+  dpeEgesGrade?: string;
+  dpeAltitude?: string;
+  dpeSurface?: string;
+  dpeMessage?: string;
+}
 
 /**
  * Parse the DPE type from a dataset string.

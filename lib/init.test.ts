@@ -12,13 +12,13 @@ describe('initDPE()', () => {
   it('should always get the correct DPE steps', () => {
     const spy = vi.spyOn(stepsModule, 'getSteps');
 
-    initDPE({ dpe: '' });
-    initDPE({ dpe: '', dpeAltitude: '' });
-    initDPE({ dpe: '', dpeSurface: '123' });
+    initDPE({ type: 'full' });
+    initDPE({ type: 'full', altitude: true });
+    initDPE({ type: 'full', surface: 123 });
 
-    expect(spy).toHaveBeenNthCalledWith(1, false, undefined);
+    expect(spy).toHaveBeenNthCalledWith(1, undefined, undefined);
     expect(spy).toHaveBeenNthCalledWith(2, true, undefined);
-    expect(spy).toHaveBeenNthCalledWith(3, false, 123);
+    expect(spy).toHaveBeenNthCalledWith(3, undefined, 123);
   });
 
   it('should compute the right graph parameters', () => {
@@ -27,8 +27,8 @@ describe('initDPE()', () => {
     const getGradeSpy = vi.spyOn(logicModule, 'getGrade').mockReturnValue('B');
     const getValuesRangeFromGradeSpy = vi.spyOn(logicModule, 'getValuesRangeFromGrade').mockReturnValue('1–42');
 
-    initDPE({ dpe: '', dpeEges: '123', dpeCep: '45.6' });
-    initDPE({ dpe: '', dpeEgesGrade: 'C', dpeCepGrade: 'D' });
+    initDPE({ type: 'full', egesValue: 123, cepValue: 45.6 });
+    initDPE({ type: 'full', egesGrade: 'C', cepGrade: 'D' });
 
     expect(getGradeSpy).toHaveBeenCalledWith(123, STEPS);
     expect(getGradeSpy).toHaveBeenCalledWith(45.6, STEPS);
@@ -39,8 +39,8 @@ describe('initDPE()', () => {
   it('should not compute "grade" graph property when provided as a parameter', () => {
     const getGradeSpy = vi.spyOn(logicModule, 'getGrade');
 
-    initDPE({ dpe: '', dpeEges: '123', dpeEgesGrade: 'C' });
-    initDPE({ dpe: '', dpeCepGrade: 'C' });
+    initDPE({ type: 'full', egesValue: 123, egesGrade: 'C' });
+    initDPE({ type: 'full', cepGrade: 'C' });
 
     expect(getGradeSpy).not.toHaveBeenCalled();
   });
@@ -48,8 +48,8 @@ describe('initDPE()', () => {
   it('should not compute "value" graph property when provided as a parameter', () => {
     const getValuesRangeFromGradeSpy = vi.spyOn(logicModule, 'getValuesRangeFromGrade');
 
-    initDPE({ dpe: '', dpeEges: '123', dpeEgesGrade: 'C' });
-    initDPE({ dpe: '', dpeCep: '45.6' });
+    initDPE({ type: 'full', egesValue: 123, egesGrade: 'C' });
+    initDPE({ type: 'full', cepValue: 45.6 });
 
     expect(getValuesRangeFromGradeSpy).not.toHaveBeenCalled();
   });
@@ -59,9 +59,9 @@ describe('initDPE()', () => {
     const renderCepSpy = vi.spyOn(renderModule, 'renderCEP');
     const renderEgesSpy = vi.spyOn(renderModule, 'renderEGES');
 
-    const res1 = initDPE({ dpe: '' });
-    const res2 = initDPE({ dpe: 'cep' });
-    const res3 = initDPE({ dpe: 'eges' });
+    const res1 = initDPE({ type: 'full' });
+    const res2 = initDPE({ type: 'cep' });
+    const res3 = initDPE({ type: 'eges' });
 
     expect(res1).toBeTypeOf('string');
     expect(renderDpeSpy).toHaveBeenCalledTimes(1);
@@ -77,8 +77,8 @@ describe('initDPE()', () => {
   it('should display the lowest grade in DPE graphs', () => {
     const getLowestGradeSpy = vi.spyOn(logicModule, 'getLowestGrade');
 
-    initDPE({ dpe: '', dpeCepGrade: 'A', dpeEgesGrade: 'F' });
-    initDPE({ dpe: 'cep', dpeCepGrade: 'C', dpeEgesGrade: 'B' });
+    initDPE({ type: 'full', cepGrade: 'A', egesGrade: 'F' });
+    initDPE({ type: 'cep', cepGrade: 'C', egesGrade: 'B' });
 
     expect(getLowestGradeSpy).toHaveBeenCalledTimes(2);
   });
