@@ -71,4 +71,13 @@ export default defineConfig({
       code: '404',
     },
   },
+  markdown: {
+    container: {
+      tipLabel: 'POUR INFO',
+      warningLabel: 'ATTENTION',
+      dangerLabel: 'DANGER',
+      infoLabel: 'POUR INFO',
+      detailsLabel: 'DÉTAILS',
+    },
+  },
 });
