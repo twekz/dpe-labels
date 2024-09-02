@@ -5,14 +5,9 @@ diagnostics de performance énergétique sur le web.
 
 > [!WARNING]
 > **Cette librairie est activement en cours de développement et n'est pas encore apte à être
-> utilisée en production.**
-> 
-> Les versions `< 1.0` sont susceptibles d'introduire des changements majeurs à chaque publication.
-> Ces changements sont systématiquement documentés dans le
+> utilisée en production.** Les versions `< 1.0` sont susceptibles d'introduire des changements
+> majeurs à chaque publication. Ces changements sont systématiquement documentés dans le
 > [CHANGELOG](https://github.com/twekz/dpe-labels/blob/main/CHANGELOG.md).
-
-🇬🇧 _Since this plugin is strictly targeted for the French market, its documentation is written in
-French. Please open an issue if any English-speaking documentation is needed._
 
 ## [Documentation et exemples](https://twekz.github.io/dpe-labels)
 

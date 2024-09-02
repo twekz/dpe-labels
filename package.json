@@ -6,7 +6,7 @@
   "license": "GPL-3.0-or-later",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/twekz/dpe-labels"
+    "url": "git+https://github.com/twekz/dpe-labels.git"
   },
   "homepage": "https://twekz.github.io/dpe-labels",
   "bugs": "https://github.com/twekz/dpe-labels/issues",
