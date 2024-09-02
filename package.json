@@ -25,6 +25,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "config": "tsx config/index.ts",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
     "git-commit": "cz",
     "lint": "eslint --fix",
     "prepare": "husky && npm run config",
@@ -56,7 +59,9 @@
     "typescript": "^5.2.2",
     "vite": "^5.3.4",
     "vite-plugin-dts": "^4.0.2",
-    "vitest": "^2.0.4"
+    "vitepress": "^1.3.4",
+    "vitest": "^2.0.4",
+    "vue": "^3.4.38"
   },
   "config": {
     "commitizen": {

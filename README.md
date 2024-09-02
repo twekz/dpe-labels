@@ -64,9 +64,9 @@ npm run test:dev
 - [ ] Ajout d'une option pour afficher la note (lettre) sans renseigner de valeur chiffrée.
 - [ ] Gestion des DPE vierges (affichage des graphiques sans note).
 - [ ] Meilleure optimisation du HTML et CSS générés.
-- [ ] Documentation des options disponibles.
+- [x] ~~Documentation des options disponibles.~~
 - [ ] Ajout de tests de rendu.
-- [ ] Ajout d'exemples d'usage.
+- [x] ~~Ajout d'exemples d'usage.~~
 - [ ] Améliorer l'accessibilité.
 
 ### Projets annexes :
