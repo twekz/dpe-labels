@@ -1,5 +1,29 @@
 
 
+## [0.2.0](https://github.com/twekz/dpe-labels/compare/0.1.0...0.2.0) (2024-09-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* Existing data-* attributes have been renamed as followed:
+- ~~`data-cep`~~ → `data-dpe-cep`
+- ~~`data-eges`~~ → `data-dpe-eges`
+- ~~`data-surface`~~ → `data-dpe-surface`
+- ~~`data-altitude`~~ →`data-dpe-altitude`
+
+### Features
+
+* add namespace to all data-* attributes ([2a6e3c3](https://github.com/twekz/dpe-labels/commit/2a6e3c3f61f426a5c5443fc7f4821b280eee6949))
+* add new init function ([b488789](https://github.com/twekz/dpe-labels/commit/b4887898170062d9755d3caa9aa89999541e0504))
+* support altitude & surface ([9562c74](https://github.com/twekz/dpe-labels/commit/9562c74362e23b4529d2e2528a46bef6fe27b5ef))
+
+
+### Bug Fixes
+
+* **dom:** prevent multiple SVG sprite injections ([ec95790](https://github.com/twekz/dpe-labels/commit/ec957905ae8b9660146ec64cb67f49eb76c5fdc6))
+* **style:** force text-align ([bc42a5c](https://github.com/twekz/dpe-labels/commit/bc42a5c86a04b9e5f82fb4a64aad11c7b8b86e98))
+* **style:** prevent line break in graph legends ([47c8cb3](https://github.com/twekz/dpe-labels/commit/47c8cb388db5c08356ba108ebf61022826399443))
+
 ## 0.1.0 (2024-08-14)
 
 
