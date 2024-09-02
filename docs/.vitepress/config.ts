@@ -4,6 +4,9 @@ export default defineConfig({
   title: 'DPE Labels',
   description: 'Petit plugin JS pour la génération et l\'affichage de diagnostics de performance énergétique (DPE) sur le web. Léger, responsive, flexible.',
 
+  // Github Pages URL base
+  base: 'dpe-labels',
+
   themeConfig: {
     nav: [
       { text: 'Documentation', link: '/presentation' },
