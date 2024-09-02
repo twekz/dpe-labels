@@ -1,3 +1,13 @@
+<script setup>
+  import { onMounted } from 'vue';
+  
+  onMounted(() => {
+    import('../../lib').then(({ dpeLabels }) => {
+        dpeLabels();
+    })
+  });
+</script>
+
 # Affichage à partir des valeurs
 
 À partir des valeurs de consommation d'énergie et d'émissions de gaz à effet de serre, ainsi que des
@@ -127,12 +137,3 @@ Les attributs peuvent être combinés pour ajuster les seuils en fonction des pa
       data-dpe-surface="22"
     ></div>
 </HtmlExampleBlock>
-
-<script setup>
-  import { onMounted } from 'vue';
-  import { dpeLabels } from '../../lib';
-
-  onMounted(() => {
-    dpeLabels()
-  });
-</script>

@@ -1,3 +1,13 @@
+<script setup>
+  import { onMounted } from 'vue';
+  
+  onMounted(() => {
+    import('../../lib').then(({ dpeLabels }) => {
+        dpeLabels();
+    })
+  });
+</script>
+
 # DPE vierge
 
 En l'absence de tout autre attribut que `data-dpe`, **DPE Labels** affiche un DPE sans appliquer de
@@ -11,11 +21,3 @@ classe.
     <div data-dpe></div>
 </HtmlExampleBlock>
 
-<script setup>
-import { onMounted } from 'vue';
-import { dpeLabels } from '../../lib';
-
-onMounted(() => {
-  dpeLabels()
-});
-</script>

@@ -1,3 +1,13 @@
+<script setup>
+  import { onMounted } from 'vue';
+  
+  onMounted(() => {
+    import('../../lib').then(({ dpeLabels }) => {
+        dpeLabels();
+    })
+  });
+</script>
+
 # Étiquettes énergie et climat individuelles
 
 Afin d'accommoder au mieux votre mise en page, **DPE Labels** permet d'afficher les étiquettes
@@ -51,12 +61,3 @@ Pour afficher uniquement l'étiquette climat, l'attribut `data-dpe` doit être r
   data-dpe-eges="4"
 ></div>
 </HtmlExampleBlock>
-
-<script setup>
-import { onMounted } from 'vue';
-import { dpeLabels } from '../../lib';
-
-onMounted(() => {
-  dpeLabels()
-});
-</script>

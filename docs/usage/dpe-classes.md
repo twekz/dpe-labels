@@ -1,3 +1,13 @@
+<script setup>
+  import { onMounted } from 'vue';
+  
+  onMounted(() => {
+    import('../../lib').then(({ dpeLabels }) => {
+        dpeLabels();
+    })
+  });
+</script>
+
 # Affichage à partir des classes
 
 Il est également possible de forcer l'affichage des classes énergie et climat de votre choix et
@@ -75,12 +85,3 @@ fourchette des valeurs possibles, selon les paramètres saisis (surface et altit
       data-dpe-altitude
     ></div>
 </HtmlExampleBlock>
-
-<script setup>
-import { onMounted } from 'vue';
-import { dpeLabels } from '../../lib';
-
-onMounted(() => {
-  dpeLabels()
-});
-</script>
