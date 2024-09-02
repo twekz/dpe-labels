@@ -3,8 +3,11 @@ import initDPE from './init.ts';
 import parseOptions, { type DPEDataset } from './dataset.ts';
 
 export function initAllDPE () {
-  // Init: load SVG sprite
-  document.body.insertAdjacentHTML('beforeend', renderSVGSprite());
+  // Load SVG sprite
+  const svg = document.getElementById('dpe-labels-svg-sprite');
+  if (svg === null) {
+    document.body.insertAdjacentHTML('beforeend', renderSVGSprite());
+  }
 
   // Detect all DPE divs
   const instances: NodeListOf<HTMLDivElement> = document.querySelectorAll('div[data-dpe]');

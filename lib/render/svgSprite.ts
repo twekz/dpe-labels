@@ -1,5 +1,5 @@
 export function renderSVGSprite (): string {
-  return `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  return `<svg xmlns="http://www.w3.org/2000/svg" style="display:none" id="dpe-labels-svg-sprite">
   <symbol id="dpe-bar-end-shape--cep" viewBox="0 0 100 100" preserveAspectRatio="none">
     <path d="m0 0 99 50-99 50" vector-effect="non-scaling-stroke" />
   </symbol>
