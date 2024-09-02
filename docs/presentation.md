@@ -11,11 +11,11 @@
 # Présentation
 
 ::: warning
-**Cette librairie est activement en cours de développement.**
+**Cette librairie est activement en cours de développement et n'est pas encore apte à être utilisée
+en production.**
 
-Les versions `< 1.0` sont susceptibles
-d'introduire des changements majeurs à chaque publication. Ces changements sont systématiquement
-documentés dans le [CHANGELOG](https://github.com/twekz/dpe-labels/blob/main/CHANGELOG.md).
+Les versions `< 1.0` sont susceptibles d'introduire des changements majeurs à chaque publication.
+Ces changements sont systématiquement documentés dans le [CHANGELOG](https://github.com/twekz/dpe-labels/blob/main/CHANGELOG.md).
 :::
 
 **DPE Labels** est une librairie Javascript permettant de générer et d'afficher des
@@ -50,4 +50,5 @@ responsable des erreurs, omissions ou interprétations incorrectes des dispositi
 
 ## Licence
 
-Cette librairée est publiée sous Licence Publique Générale (GNU GPL version 3). Voir le [fichier de licence](https://github.com/twekz/dpe-labels/blob/main/LICENSE) pour les détails.
+Cette librairie est publiée sous Licence Publique Générale (GNU GPL version 3). Voir le
+[fichier de licence](https://github.com/twekz/dpe-labels/blob/main/LICENSE) pour les détails.

@@ -1,83 +1,45 @@
 # DPE Labels
 
-**Petit plugin JS pour la génération et l'affichage de diagnostics de performance énergétique (DPE) sur le web. Léger, responsive, flexible.**
+**DPE Labels** est une librairie Javascript permettant de générer et d'afficher des
+diagnostics de performance énergétique sur le web.
 
-📜 L'affichage est à jour suivant la dernière réglementation ([arrêté du 25 mars 2024](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049446315)) entrée en vigueur le 1er juillet 2024. 
+> [!WARNING]
+> **Cette librairie est activement en cours de développement et n'est pas encore apte à être
+> utilisée en production.**
+> 
+> Les versions `< 1.0` sont susceptibles d'introduire des changements majeurs à chaque publication.
+> Ces changements sont systématiquement documentés dans le
+> [CHANGELOG](https://github.com/twekz/dpe-labels/blob/main/CHANGELOG.md).
 
-🇬🇧 _Since this plugin is strictly targeted for the French market, its documentation is written in French. Please let me know if any English-speaking documentation is needed._
+🇬🇧 _Since this plugin is strictly targeted for the French market, its documentation is written in
+French. Please open an issue if any English-speaking documentation is needed._
 
-## Démarrage
+## [Documentation et exemples](https://twekz.github.io/dpe-labels)
 
-### Installation
+- [Présentation](https://twekz.github.io/dpe-labels/presentation.html)
+- [Installation](https://twekz.github.io/dpe-labels/installation.html)
+- [Utilisation et options disponibles](https://twekz.github.io/dpe-labels/usage/affichage.html)
 
-Récupérer le package via `npm` :
+## Réglementation
 
-```
-npm install dpe-labels
-```
+Cette librairie s'efforce de suivre les dispositions de l'[arrêté du 25 mars 2024](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049446315)
+entrées en vigueur le 1er juillet 2024.
 
-### Utilisation
-
-1. Inclure les fichiers `dpe-labels.css` et `dpe-labels.js` dans votre page HTML.
-2. Ajouter les placeholders aux endroits souhaités, avec les valeurs nécessaires :
-
-```html
-<!-- Rendu DPE complet (CEP & EGES) : -->
-<div data-dpe data-cep="123" data-eges="45"></div>
-
-<!-- Rendu CEP uniquement : -->
-<div data-dpe="cep" data-cep="123" data-eges="45"></div>
-
-<!-- Rendu EGES uniquement : -->
-<div data-dpe="eges" data-eges="45"></div>
-
-<!-- DPE ≥ 800m d'altitude : -->
-<div data-dpe data-cep="123" data-eges="45" data-altitude></div>
-
-<!-- DPE surface < 40m2 : -->
-<div data-dpe data-cep="123" data-eges="45" data-surface="10"></div>
-```
+Avertissement : cette librairie est fournie "en l'état", sans garantie d'exactitude ou
+d'exhaustivité. L'utilisation de ce code est à vos propres risques, et son auteur ne peut être tenu
+responsable des erreurs, omissions ou interprétations incorrectes des dispositions légales.
 
 ## Développement
 
-```shell
-npm install
-```
-
-```shell
-# Lance un serveur de dev pour index.html avec HMR
-npm run dev
-```
-
-```shell
-# Lance les tests en mode 'watch'
-npm run test:dev
-```
-
-## TODO
-
-### À faire avant la première release majeure :
-
-- [x] ~~Mise à jour réglementaire complète :~~
-  - [x] ~~Ajustement des seuils pour les biens de petites surfaces (de 8 à 40 m2),~~
-  - [x] ~~Ajustement des seuils pour les biens en altitude.~~
-- [ ] Ajout d'une option pour afficher la note (lettre) sans renseigner de valeur chiffrée.
-- [ ] Gestion des DPE vierges (affichage des graphiques sans note).
-- [ ] Meilleure optimisation du HTML et CSS générés.
-- [x] ~~Documentation des options disponibles.~~
-- [ ] Ajout de tests de rendu.
-- [x] ~~Ajout d'exemples d'usage.~~
-- [ ] Améliorer l'accessibilité.
-
-### Projets annexes :
-
-- [ ] Création d'un wrapper pour composants React.
-- [ ] Création d'un plugin WordPress **(EN COURS)**
+1. Cloner ou télécharger le code source puis `npm install` à la racine du projet.
+2. Lancer un serveur de dev en exécutant `npm run dev` pour afficher index.html avec HMR.
+3. Lancer les tests unitaires en mode "watch" avec `npm run test:dev`.
 
 ## Auteur
 
 * **Sam Lemaresquier** - [@twekz](https://github.com/twekz) | [samlem.com](https://samlem.com)
 
-## License
+## Licence
 
-Ce projet est publié sous Licence Publique Générale (GNU GPL version 3). Voir le fichier de [LICENSE](LICENSE) pour les détails.
+Cette librairie est publiée sous Licence Publique Générale (GNU GPL version 3). Voir le 
+[fichier de licence](https://github.com/twekz/dpe-labels/blob/main/LICENSE) pour les détails.
