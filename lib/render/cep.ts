@@ -1,6 +1,6 @@
 import { GRADES } from '../logic.ts';
 
-function renderCEPRow (grade: string, _row: string, cep: number, eges: number) {
+function renderCEPRow (grade: string, _row: string, cep: string, eges: string) {
   const isActive = grade === _row;
   const classes = ['dpe-table-row'];
   if (_row === 'F' || _row === 'G') { classes.push('dpe-passoire'); }
@@ -31,7 +31,7 @@ function renderCEPRow (grade: string, _row: string, cep: number, eges: number) {
   return row;
 }
 
-function renderCEPRows (grade: string, cep: number, eges: number) {
+function renderCEPRows (grade: string, cep: string, eges: string) {
   let rows = '';
   GRADES.forEach((row) => {
     rows += renderCEPRow(grade, row, cep, eges);
@@ -44,7 +44,7 @@ function renderPassoireLegend (globalGrade: string): string {
   return '<div class="dpe-passoire-legend">passoire énergétique</div>';
 }
 
-export function renderCEP (globalGrade: string, cep: number, eges: number) {
+export function renderCEP (globalGrade: string, cep: string, eges: string) {
   return `<figure class="dpe dpe--cep">
       <div class="dpe-table">
         <div class="dpe-table-row dpe-legend">

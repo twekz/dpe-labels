@@ -1,72 +1,75 @@
-import { renderDPE, renderSVGSprite } from './render';
-import { renderCEP } from './render/cep.ts';
-import { renderEGES } from './render/eges.ts';
-import { getCEP, getEGES, getLowestGrade } from './logic.ts';
+import { getSteps } from './steps.ts';
+import { type DPEGrade, getGrade, getLowestGrade, getValuesRangeFromGrade } from './logic.ts';
+import { renderDPE, renderCEP, renderEGES } from './render';
+import { isDpeGrade } from './utils.ts';
 
-// https://youmightnotneedjquery.com/#ready
-function ready (fn: () => void): void {
-  if (document.readyState !== 'loading') {
-    fn();
-  } else {
-    document.addEventListener('DOMContentLoaded', fn);
-  }
+export type DPEType = 'full' | 'cep' | 'eges';
+
+export interface DPEOptions {
+  type: DPEType;
+  cepValue?: number;
+  cepGrade?: DPEGrade;
+  egesValue?: number;
+  egesGrade?: DPEGrade;
+  altitude?: boolean;
+  surface?: number;
+  message?: string;
 }
 
-ready(() => {
-  // Init: load SVG sprite
-  document.body.insertAdjacentHTML('beforeend', renderSVGSprite());
+interface DPEGraphParams {
+  value: string;
+  grade: DPEGrade | '';
+}
 
-  // Detect all DPE divs
-  const instances: NodeListOf<HTMLDivElement> = document.querySelectorAll('div[data-dpe]');
+function computeDpeGraphParams (_val: number | undefined, _grade: DPEGrade | undefined, steps: number[]): DPEGraphParams {
+  const grade = _grade != null
+    // Display passed grade parameter:
+    ? _grade
+    : _val != null
+      // Compute grade from value parameter:
+      ? getGrade(_val, steps)
+      : '';
+  const value = _val != null
+    // Display passed value parameter:
+    ? _val.toString()
+    : _grade != null
+      // Display values range from passed grade parameter:
+      ? getValuesRangeFromGrade(_grade, steps)
+      : '';
+  return { value, grade };
+}
 
-  // Render
-  const errors: string[] = [];
-  instances.forEach(instance => {
-    const { dpe: type, cep, eges } = instance.dataset;
+function initDPE (options: DPEOptions): string {
+  const {
+    type,
+    cepValue: _cepValue,
+    cepGrade: _cepGrade,
+    egesValue: _egesValue,
+    egesGrade: _egesGrade,
+    altitude,
+    surface,
+  } = options;
 
-    // EGES
+  const steps = getSteps(altitude, surface);
 
-    if (eges == null) {
-      errors.push('EGES value is missing.');
-      return;
-    }
+  // EGES
+  const { grade: egesGrade, value: egesValue } = computeDpeGraphParams(_egesValue, _egesGrade, steps.eges);
+  if (type === 'eges') {
+    return renderEGES(egesGrade, egesValue);
+  }
 
-    const egesVal = parseInt(eges);
-    if (isNaN(parseInt(eges))) {
-      errors.push(`EGES value "${eges}" must be a valid integer.`);
-      return;
-    }
+  // CEP
+  const { grade: cepGrade, value: cepValue } = computeDpeGraphParams(_cepValue, _cepGrade, steps.cep);
+  const mainGrade = isDpeGrade(cepGrade) && isDpeGrade(egesGrade)
+    ? getLowestGrade(cepGrade, egesGrade)
+    : '';
 
-    const egesGrade = getEGES(egesVal);
+  if (type === 'cep') {
+    return renderCEP(mainGrade, cepValue, egesValue);
+  }
 
-    if (type === 'eges') {
-      instance.innerHTML = renderEGES(egesGrade, egesVal);
-      return;
-    }
+  // Full
+  return renderDPE(mainGrade, egesGrade, cepValue, egesValue);
+}
 
-    // CEP
-
-    if (cep == null) {
-      errors.push('CEP value is missing.');
-      return;
-    }
-
-    const cepVal = parseInt(cep);
-    if (isNaN(cepVal)) {
-      errors.push(`CEP value "${cep}" must be a valid integer.`);
-      return;
-    }
-
-    const cepGrade = getCEP(cepVal);
-    const globalGrade = getLowestGrade(cepGrade, egesGrade);
-
-    if (type === 'cep') {
-      instance.innerHTML = renderCEP(globalGrade, cepVal, egesVal);
-    } else {
-      instance.innerHTML = renderDPE(globalGrade, egesGrade, cepVal, egesVal);
-    }
-  });
-
-  // Throw all lib errors to client
-  throw new Error(`[dpe-labels] ${errors.join(' ')}`);
-});
+export default initDPE;

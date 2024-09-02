@@ -28,3 +28,10 @@ coverage
 
 # Environment variables
 .env
+
+# Compiled config values
+lib/config.json
+
+# VitePress (docs website)
+docs/.vitepress/dist
+docs/.vitepress/cache
