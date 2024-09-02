@@ -110,7 +110,7 @@ Valeurs possibles&nbsp;:
       data-dpe-cep="420"
       data-dpe-eges="79"
     ></div>
-</HtmlExampleBlock>>
+</HtmlExampleBlock>
 
 ## Combinaison des attributs
 
