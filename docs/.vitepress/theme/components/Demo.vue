@@ -71,7 +71,7 @@
       </div>
 
       <p style="text-align: center; margin-bottom: 32px">
-        <button v-on:click="onStateUpdate" class="button">
+        <button v-on:click="onStateUpdate" class="button plausible-event-name=Use+Demo">
           Actualiser les étiquettes
         </button>
       </p>
