@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress';
 
 export default defineConfig({
   title: 'DPE Labels',
-  description: 'Petit plugin JS pour la génération et l\'affichage de diagnostics de performance énergétique (DPE) sur le web. Léger, responsive, flexible.',
+  description: 'Librairie JavaScript pour générer et afficher des diagnostics de performance énergétique (DPE) sur le web. Léger, responsive, flexible.',
 
   // GitHub Pages URL base
   base: '/dpe-labels/',

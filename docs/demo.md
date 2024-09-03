@@ -12,7 +12,7 @@ import Demo from '.vitepress/theme/components/Demo.vue'
 <div class="demo-page-container">
 
 
-# Testez DPE Labels en direct
+# Testez DPE Labels
 
 Ajustez les paramètres et visualisez le DPE correspondant. 
 

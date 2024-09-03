@@ -71,7 +71,7 @@
       </div>
 
       <p style="text-align: center; margin-bottom: 32px">
-        <button v-on:click="onStateUpdate" class="button" style="font-size: 1.25em">
+        <button v-on:click="onStateUpdate" class="button">
           Actualiser les étiquettes
         </button>
       </p>
@@ -158,5 +158,11 @@
     font-weight: 600;
     white-space: nowrap;
     transition: color 0.25s, border-color 0.25s, background-color 0.25s;
+
+    &:hover {
+      border-color: var(--vp-button-brand-hover-border);
+      color: var(--vp-button-brand-hover-text);
+      background-color: var(--vp-button-brand-hover-bg);
+    }
   }
 </style>
