@@ -10,6 +10,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Documentation', link: '/presentation' },
+      { text: 'Testez en direct !', link: '/demo' },
     ],
 
     socialLinks: [

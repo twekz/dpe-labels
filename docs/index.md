@@ -9,6 +9,9 @@ hero:
       text: Documentation
       link: /presentation
     - theme: alt
-      text: Github
+      text: Testez en direct !
+      link: /demo
+    - theme: alt
+      text: Code source
       link: https://github.com/twekz/dpe-labels
 ---
