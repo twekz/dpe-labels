@@ -40,10 +40,13 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
   --dpe-bar-gap: 0.25rem;
   --dpe-border-color: var(--dpe-bar-color);
   --dpe-text-stroke-color: transparent;
+  --dpe-gutter: 2em;
 }
 
 .dpe {
-  * {
+  *,
+  &-row,
+  &-row &-col {
     box-sizing: border-box;
   }
 
@@ -51,11 +54,15 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
+    margin: 0 calc(-0.5 * var(--dpe-gutter));
   }
 
   &-row &-col {
     display: block;
-    flex: 1 1 320px;
+    flex: 1 1 380px;
+    max-width: 100%;
+    padding: 0 calc(0.5 * var(--dpe-gutter));
+    margin: 0.5em 0;
   }
 
   &-row &-col + &-col {
@@ -63,7 +70,6 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
   }
 
   & {
-    padding: .5em;
     color: var(--dpe-color);
     margin: 0 auto;
     font-weight: bold;
@@ -258,7 +264,7 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
 
     border: 2px solid nth($dpe-eges-colors, 1);
     border-radius: 1em;
-    margin: 1em;
+    padding: .5em;
   }
 
   &--eges &-bar-end {
