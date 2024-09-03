@@ -148,7 +148,6 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
 
       > div {
         color: var(--dpe-color-gray);
-        white-space: nowrap;
       }
     }
 
@@ -160,6 +159,10 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
 
     &-legend {
       font-size: var(--dpe-legend-font-size, .6em);
+
+      span {
+        display: inline-block;
+      }
     }
   }
 

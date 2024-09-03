@@ -11,12 +11,12 @@ function renderCEPRow (grade: string, _row: string, cep: string, eges: string) {
       <div class="dpe-value">
         <div class="dpe-value-title" style="margin-top:-4.5em">consommation<div>(énergie primaire)</div></div>
         <div class="dpe-value-nb">${cep}</div>
-        <div class="dpe-value-legend">kWh/m<sup>2</sup>/an</div>
+        <div class="dpe-value-legend"><span>kWh/m<sup>2</sup></span><span>/an</span></div>
       </div>
       <div class="dpe-value">
         <div class="dpe-value-title" style="margin-top:-3em">émissions</div>
         <div class="dpe-value-nb">${eges}*</div>
-        <div class="dpe-value-legend">kg&nbsp;CO<sub>2</sub>/m<sup>2</sup>/an</div>
+        <div class="dpe-value-legend"><span>kg</span>&nbsp;<span>CO<sub>2</sub></span><span>/m<sup>2</sup></span><span>/an</span></div>
       </div>
     </div>`;
   }
