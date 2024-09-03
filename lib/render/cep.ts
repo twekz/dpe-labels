@@ -53,10 +53,8 @@ export function renderCEP (globalGrade: string, cep: string, eges: string) {
         </div>
       </div>
       <div class="dpe-table">
-        <div class="dpe-table-row-group">
-          ${renderCEPRows(globalGrade, cep, eges)}
-          ${renderPassoireLegend(globalGrade)}
-        </div>
+        ${renderCEPRows(globalGrade, cep, eges)}
+        ${renderPassoireLegend(globalGrade)}
       </div>
       <div class="dpe-table">
         <div class="dpe-table-row dpe-legend">
