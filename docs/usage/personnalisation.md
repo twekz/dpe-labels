@@ -22,34 +22,38 @@ Les étiquettes DPE héritent de leur container.
 
 ::: code-group
 ```html
-<div
-  class="box"
-  data-dpe
-  data-dpe-cep="123"
-  data-dpe-eges="45"
-></div>
+<div class="wrapper-demo">
+  <div
+    data-dpe
+    data-dpe-cep="123"
+    data-dpe-eges="45"
+  ></div>
+</div>
 ```
 ```css
-.box {
-  background: no-repeat top/cover url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWQ0OWg5OWg0M3l4MjIwaWJudXM0NnJwOGphc3Z1MnJubTgzcHJmMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/pNpONEEg3pLIQ/giphy.gif");      backgroud-repeat: no-repeat;
+.wrapper-demo {
   font-family: 'Comic Sans MS', cursive;
+  padding: 1em;
+  color: var(--vp-c-brand);
 }
 ```
 :::
 
 <HtmlExampleBlock>
-    <div
-        class="box"
-        data-dpe
-        data-dpe-cep="123"
-        data-dpe-eges="45"
-    ></div>
+    <div class="wrapper-demo">
+        <div
+            data-dpe
+            data-dpe-cep="123"
+            data-dpe-eges="45"
+        ></div>
+    </div>
 </HtmlExampleBlock>
 
 <style>
-  .box {
-    background: no-repeat top/cover url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWQ0OWg5OWg0M3l4MjIwaWJudXM0NnJwOGphc3Z1MnJubTgzcHJmMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/pNpONEEg3pLIQ/giphy.gif");
+  .wrapper-demo {
     font-family: 'Comic Sans MS', cursive;
+    padding: 1em;
+    color: var(--vp-c-brand);
   }
 </style>
 

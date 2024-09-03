@@ -1,3 +1,4 @@
 lint-staged
 
+npx tsc
 npm run test:run

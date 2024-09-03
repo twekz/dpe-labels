@@ -1,5 +1,5 @@
 import { expect, it, describe } from 'vitest';
-import { getGrade, getPosition, getLowestGrade, getValuesRangeFromGrade } from './logic.ts';
+import { getGrade, getPosition, getLowestGrade, getValuesRangeFromGrade, getMainGrade } from './logic.ts';
 
 const CEP_STEPS = [70, 110, 180, 250, 330, 420];
 const EGES_STEPS = [6, 11, 30, 50, 70, 100];
@@ -26,6 +26,19 @@ describe('getGrade()', () => {
     expect(getGrade(400, CEP_STEPS)).toBe('F');
     expect(getGrade(420, CEP_STEPS)).toBe('G');
     expect(getGrade(1234, CEP_STEPS)).toBe('G');
+  });
+});
+
+describe('getMainGrade()', () => {
+  it('should always return the user-submitted CEP grade when the CEP grade is user-submitted', () => {
+    expect(getMainGrade('A', 'C', 'G')).toBe('A');
+    expect(getMainGrade('A', '', 'G')).toBe('A');
+  });
+  it('should return the lowest of CEP and EGES grades when the CEP grade is computed', () => {
+    expect(getMainGrade(undefined, 'C', 'G')).toBe('G');
+  });
+  it('should return an empty string when no CEP grade is passed', () => {
+    expect(getMainGrade(undefined, '', 'G')).toBe('');
   });
 });
 

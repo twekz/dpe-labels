@@ -29,6 +29,8 @@ $effectivePassoireImageWidth: 0.5 * $passoireImageWidth + $passoireImageTipWidth
 $cepBarHeight: 2.5rem;
 $cepBarEndWidth: 0.75rem;
 $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
+$MIN_WIDTH: 180px;
+$MIN_HEIGHT: 180px;
 
 :root {
   --dpe-color: black;
@@ -40,10 +42,13 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
   --dpe-bar-gap: 0.25rem;
   --dpe-border-color: var(--dpe-bar-color);
   --dpe-text-stroke-color: transparent;
+  --dpe-gutter: 2em;
 }
 
 .dpe {
-  * {
+  *,
+  &-row,
+  &-row &-col {
     box-sizing: border-box;
   }
 
@@ -51,11 +56,15 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
+    margin: 0 calc(-0.5 * var(--dpe-gutter));
   }
 
   &-row &-col {
     display: block;
-    flex: 1 1 320px;
+    flex: 1 1 380px;
+    max-width: 100%;
+    padding: 0 calc(0.5 * var(--dpe-gutter));
+    margin: 0.5em 0;
   }
 
   &-row &-col + &-col {
@@ -63,11 +72,12 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
   }
 
   & {
-    padding: .5em;
     color: var(--dpe-color);
     margin: 0 auto;
     font-weight: bold;
     text-align: left;
+    min-width: $MIN_WIDTH;
+    min-height: $MIN_HEIGHT;
   }
 
   & figcaption {
@@ -76,15 +86,11 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
 
   &-table {
     display: table;
+    position: relative;
   }
 
   &--cep &-table {
     width: 100%;
-  }
-
-  &-table-row-group {
-    display: table-row-group;
-    position: relative;
   }
 
   &-table-row {
@@ -93,7 +99,8 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
   }
 
   &-table-cell,
-  &-table-cell--bar {
+  &-table-cell--bar,
+  &-table-cell--legend {
     display: table-cell;
     position: relative;
     vertical-align: middle;
@@ -101,7 +108,8 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
     padding: calc(var(--dpe-bar-gap) * 0.5) 0;
   }
 
-  &-table-cell--bar {
+  &-table-cell--bar,
+  &-table-cell--legend {
     width: 60%;
   }
 
@@ -150,7 +158,6 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
 
       > div {
         color: var(--dpe-color-gray);
-        white-space: nowrap;
       }
     }
 
@@ -162,6 +169,10 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
 
     &-legend {
       font-size: var(--dpe-legend-font-size, .6em);
+
+      span {
+        display: inline-block;
+      }
     }
   }
 
@@ -178,15 +189,11 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
     padding: .25em 0;
   }
 
-  &--cep &-legend {
-    &:first-of-type { color: nth($dpe-cep-colors, 1); }
-    &:last-of-type { color: nth($dpe-cep-colors, 7); }
-  }
+  &--cep &-table:first-of-type &-legend { color: nth($dpe-cep-colors, 1); }
+  &--cep &-table:last-of-type &-legend { color: nth($dpe-cep-colors, 7); }
 
-  &--eges &-legend {
-    &:first-of-type { color: darken(nth($dpe-eges-colors, 1), 10%); }
-    &:last-of-type { color: nth($dpe-eges-colors, 7); }
-  }
+  &--eges &-table:first-of-type &-legend { color: darken(nth($dpe-eges-colors, 1), 10%); }
+  &--eges &-table:last-of-type &-legend { color: nth($dpe-eges-colors, 7); }
 
   &-bar {
     height: 100%;
@@ -261,7 +268,7 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
 
     border: 2px solid nth($dpe-eges-colors, 1);
     border-radius: 1em;
-    margin: 1em;
+    padding: .5em;
   }
 
   &--eges &-bar-end {

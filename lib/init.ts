@@ -1,7 +1,6 @@
 import { getSteps } from './steps.ts';
-import { type DPEGrade, getGrade, getLowestGrade, getValuesRangeFromGrade } from './logic.ts';
+import { type DPEGrade, getGrade, getMainGrade, getValuesRangeFromGrade } from './logic.ts';
 import { renderDPE, renderCEP, renderEGES } from './render';
-import { isDpeGrade } from './utils.ts';
 
 export type DPEType = 'full' | 'cep' | 'eges';
 
@@ -60,9 +59,7 @@ function initDPE (options: DPEOptions): string {
 
   // CEP
   const { grade: cepGrade, value: cepValue } = computeDpeGraphParams(_cepValue, _cepGrade, steps.cep);
-  const mainGrade = isDpeGrade(cepGrade) && isDpeGrade(egesGrade)
-    ? getLowestGrade(cepGrade, egesGrade)
-    : '';
+  const mainGrade = getMainGrade(_cepGrade, cepGrade, egesGrade);
 
   if (type === 'cep') {
     return renderCEP(mainGrade, cepValue, egesValue);

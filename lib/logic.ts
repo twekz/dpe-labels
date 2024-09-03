@@ -1,4 +1,5 @@
 import sortedIndex from 'lodash/sortedIndex';
+import { isDpeGrade } from './utils.ts';
 
 export const GRADES = ['A', 'B', 'C', 'D', 'E', 'F', 'G'] as const;
 
@@ -12,6 +13,14 @@ export function getPosition (value: number, array: number[]): number {
 export function getGrade (value: number, steps: number[]): DPEGrade {
   const position = getPosition(value, steps);
   return GRADES[position];
+}
+
+export function getMainGrade (userCepGrade: DPEGrade | '' = '', cepGrade: DPEGrade | '', egesGrade: DPEGrade | ''): DPEGrade | '' {
+  return isDpeGrade(userCepGrade)
+    ? userCepGrade
+    : isDpeGrade(cepGrade) && isDpeGrade(egesGrade)
+      ? getLowestGrade(cepGrade, egesGrade)
+      : '';
 }
 
 export function getLowestGrade (cepGrade: DPEGrade, egesGrade: DPEGrade): DPEGrade {
