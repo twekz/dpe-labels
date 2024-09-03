@@ -1,6 +1,6 @@
 # DPE Labels
 
-**DPE Labels** est une librairie Javascript permettant de générer et d'afficher des
+**DPE Labels** est une librairie JavaScript permettant de générer et d'afficher des
 diagnostics de performance énergétique sur le web.
 
 > [!WARNING]

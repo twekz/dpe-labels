@@ -18,9 +18,8 @@ Les versions `< 1.0` sont susceptibles d'introduire des changements majeurs à c
 Ces changements sont systématiquement documentés dans le [CHANGELOG](https://github.com/twekz/dpe-labels/blob/main/CHANGELOG.md).
 :::
 
-**DPE Labels** est une librairie Javascript permettant de générer et d'afficher des
+**DPE Labels** est une librairie JavaScript permettant de générer et d'afficher des
 diagnostics de performance énergétique sur le web.
-
 
 <HtmlExampleBlock>
   <div data-dpe></div>

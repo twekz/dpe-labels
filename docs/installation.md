@@ -62,7 +62,7 @@ Sinon, vous pouvez directement récupérer les fichiers nécessaires auprès d'u
 
 ## Compatibilité avec les frameworks
 
-**DPE Labels** n'est pas directement compatible avec les frameworks Javascript tels que React, Vue
+**DPE Labels** n'est pas directement compatible avec les frameworks JavaScript tels que React, Vue
 ou Angular, car elle interagit directement avec le DOM.
 
 ## Support des navigateurs

@@ -2,7 +2,7 @@
   "name": "dpe-labels",
   "version": "0.2.0",
   "author": "Sam Lemaresquier <contact@samlem.com> (samlem.com)",
-  "description": "Librairie JS pour la génération et l'affichage de diagnostics de performance énergétique (DPE) sur le web. Léger, responsive, flexible.",
+  "description": "Librairie JavaScript pour générer et afficher des diagnostics de performance énergétique (DPE) sur le web. Léger, responsive, flexible.",
   "license": "GPL-3.0-or-later",
   "repository": {
     "type": "git",
