@@ -35,10 +35,10 @@ describe('getMainGrade()', () => {
     expect(getMainGrade('A', '', 'G')).toBe('A');
   });
   it('should return the lowest of CEP and EGES grades when the CEP grade is computed', () => {
-    expect(getMainGrade('', 'C', 'G')).toBe('G');
+    expect(getMainGrade(undefined, 'C', 'G')).toBe('G');
   });
   it('should return an empty string when no CEP grade is passed', () => {
-    expect(getMainGrade('', '', 'G')).toBe('');
+    expect(getMainGrade(undefined, '', 'G')).toBe('');
   });
 });
 

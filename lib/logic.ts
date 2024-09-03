@@ -15,7 +15,7 @@ export function getGrade (value: number, steps: number[]): DPEGrade {
   return GRADES[position];
 }
 
-export function getMainGrade (userCepGrade: DPEGrade | '', cepGrade: DPEGrade | '', egesGrade: DPEGrade | ''): DPEGrade | '' {
+export function getMainGrade (userCepGrade: DPEGrade | '' = '', cepGrade: DPEGrade | '', egesGrade: DPEGrade | ''): DPEGrade | '' {
   return isDpeGrade(userCepGrade)
     ? userCepGrade
     : isDpeGrade(cepGrade) && isDpeGrade(egesGrade)
