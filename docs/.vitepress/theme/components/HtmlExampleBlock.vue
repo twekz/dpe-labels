@@ -8,7 +8,7 @@
   .html-example-block {
     display: block;
     background: #fff;
-    border: 1px solid var(--vp-code-block-divider-color);
+    border: 1px solid var(--vp-c-border);
     border-radius: 8px;
     margin: 16px 0;
     padding: 10px;
