@@ -1,5 +1,17 @@
 
 
+## [0.2.1](https://github.com/twekz/dpe-labels/compare/0.2.0...0.2.1) (2024-09-03)
+
+
+### Bug Fixes
+
+* enforce regulated minimum size ([aa5a70f](https://github.com/twekz/dpe-labels/commit/aa5a70fefb8ecad4f44eb1714b9b2eb1b290f422))
+* **logic:** always display user-submitted CEP grade ([8ee70b7](https://github.com/twekz/dpe-labels/commit/8ee70b7663ad9c20e4bfd459745b76749a71fe27))
+* **style:** allow positioned line breaks in legend ([9b2c804](https://github.com/twekz/dpe-labels/commit/9b2c804a968c83968842790def1a0b96955385c1))
+* **style:** fix missing color on EGES legend rows ([6b00f67](https://github.com/twekz/dpe-labels/commit/6b00f675f98cb3380edead9b635f13186f61b6b9))
+* **style:** fix position bug in Safari ([ba7d156](https://github.com/twekz/dpe-labels/commit/ba7d156924bfe9f628facbcc6c05260e0ed0ce42))
+* **style:** improve layout ([e42e580](https://github.com/twekz/dpe-labels/commit/e42e5808e4ed554758e9bed6c810ac944dbd18ed))
+
 ## [0.2.0](https://github.com/twekz/dpe-labels/compare/0.1.0...0.2.0) (2024-09-02)
 
 
