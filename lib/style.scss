@@ -29,6 +29,8 @@ $effectivePassoireImageWidth: 0.5 * $passoireImageWidth + $passoireImageTipWidth
 $cepBarHeight: 2.5rem;
 $cepBarEndWidth: 0.75rem;
 $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
+$MIN_WIDTH: 180px;
+$MIN_HEIGHT: 180px;
 
 :root {
   --dpe-color: black;
@@ -74,6 +76,8 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
     margin: 0 auto;
     font-weight: bold;
     text-align: left;
+    min-width: $MIN_WIDTH;
+    min-height: $MIN_HEIGHT;
   }
 
   & figcaption {
