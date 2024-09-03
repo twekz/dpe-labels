@@ -74,12 +74,12 @@ describe('initDPE()', () => {
     expect(renderEgesSpy).toHaveBeenCalledWith('', '');
   });
 
-  it('should display the lowest grade in DPE graphs', () => {
-    const getLowestGradeSpy = vi.spyOn(logicModule, 'getLowestGrade');
+  it('should handle which CEP grade to display', () => {
+    const getMainGrade = vi.spyOn(logicModule, 'getMainGrade');
 
     initDPE({ type: 'full', cepGrade: 'A', egesGrade: 'F' });
     initDPE({ type: 'cep', cepGrade: 'C', egesGrade: 'B' });
 
-    expect(getLowestGradeSpy).toHaveBeenCalledTimes(2);
+    expect(getMainGrade).toHaveBeenCalledTimes(2);
   });
 });
