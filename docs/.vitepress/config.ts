@@ -7,6 +7,22 @@ export default defineConfig({
   // GitHub Pages URL base
   base: '/dpe-labels/',
 
+  head: [
+    [
+      'script',
+      {
+        defer: '',
+        'data-domain': 'twekz.github.io/dpe-labels',
+        src: 'https://plausible.io/js/script.outbound-links.tagged-events.js',
+      },
+    ],
+    [
+      'script',
+      {},
+      'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }',
+    ],
+  ],
+
   themeConfig: {
     nav: [
       { text: 'Documentation', link: '/presentation' },
