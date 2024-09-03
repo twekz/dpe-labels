@@ -49,15 +49,19 @@ export function renderCEP (globalGrade: string, cep: string, eges: string) {
       <div class="dpe-table">
         <div class="dpe-table-row dpe-legend">
           <div class="dpe-table-cell"></div>
-          <div class="dpe-table-cell">Logement extrêmement performant</div>
+          <div class="dpe-table-cell--legend">Logement extrêmement performant</div>
         </div>
+      </div>
+      <div class="dpe-table">
         <div class="dpe-table-row-group">
           ${renderCEPRows(globalGrade, cep, eges)}
           ${renderPassoireLegend(globalGrade)}
         </div>
+      </div>
+      <div class="dpe-table">
         <div class="dpe-table-row dpe-legend">
           <div class="dpe-table-cell"></div>
-          <div class="dpe-table-cell">Logement extrêmement peu performant</div>
+          <div class="dpe-table-cell--legend">Logement extrêmement peu performant</div>
         </div>
       </div>
     </figure>`;

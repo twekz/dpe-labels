@@ -76,15 +76,11 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
 
   &-table {
     display: table;
+    position: relative;
   }
 
   &--cep &-table {
     width: 100%;
-  }
-
-  &-table-row-group {
-    display: table-row-group;
-    position: relative;
   }
 
   &-table-row {
@@ -93,7 +89,8 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
   }
 
   &-table-cell,
-  &-table-cell--bar {
+  &-table-cell--bar,
+  &-table-cell--legend {
     display: table-cell;
     position: relative;
     vertical-align: middle;
@@ -101,7 +98,8 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
     padding: calc(var(--dpe-bar-gap) * 0.5) 0;
   }
 
-  &-table-cell--bar {
+  &-table-cell--bar,
+  &-table-cell--legend {
     width: 60%;
   }
 
@@ -178,15 +176,11 @@ $cepBarEndSizeRatio: math.div($cepBarEndWidth, $cepBarHeight);
     padding: .25em 0;
   }
 
-  &--cep &-legend {
-    &:first-of-type { color: nth($dpe-cep-colors, 1); }
-    &:last-of-type { color: nth($dpe-cep-colors, 7); }
-  }
+  &--cep &-table:first-of-type &-legend { color: nth($dpe-cep-colors, 1); }
+  &--cep &-table:last-of-type &-legend { color: nth($dpe-cep-colors, 7); }
 
-  &--eges &-legend {
-    &:first-of-type { color: darken(nth($dpe-eges-colors, 1), 10%); }
-    &:last-of-type { color: nth($dpe-eges-colors, 7); }
-  }
+  &--eges &-table:first-of-type &-legend { color: darken(nth($dpe-eges-colors, 1), 10%); }
+  &--eges &-table:last-of-type &-legend { color: nth($dpe-eges-colors, 7); }
 
   &-bar {
     height: 100%;
