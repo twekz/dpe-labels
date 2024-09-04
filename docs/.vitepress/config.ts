@@ -62,8 +62,8 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Publié sous Licence Publique Générale (GNU GPL version 3)',
-      copyright: 'Créé par <a href="https://samlem.com" target="_blank">Sam Lemaresquier</a>',
+      message: 'Publié sous Licence MIT',
+      copyright: 'Copyright &copy; 2024 <a href="https://samlem.com" target="_blank">Sam Lemaresquier</a>',
     },
 
     externalLinkIcon: true,
