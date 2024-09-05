@@ -1,18 +1,28 @@
+/// <reference types="vitest" />
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { minify } from 'rollup-plugin-esbuild';
 
 export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'lib/index.ts'),
-      name: 'dpe-labels',
       fileName: 'dpe-labels',
     },
+    sourcemap: true,
     rollupOptions: {
-      output: {
-        assetFileNames: 'dpe-labels.[ext]',
-      },
+      output: [
+        {
+          entryFileNames: 'dpe-labels.js',
+          format: 'es',
+        },
+        {
+          entryFileNames: 'dpe-labels.min.js',
+          format: 'es',
+          plugins: [minify()],
+        },
+      ],
     },
   },
   plugins: [dts({
