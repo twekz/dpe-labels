@@ -1,5 +1,21 @@
 
 
+## [0.3.0](https://github.com/twekz/dpe-labels/compare/0.2.1...0.3.0) (2024-09-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* **dist:** dpe-labels.umd.cjs is no longer part of the releases
+
+### Bug Fixes
+
+* **build:** fix css filename ([149637f](https://github.com/twekz/dpe-labels/commit/149637f548b4fe81da6bd00ab2f3a41660af64f9))
+
+
+### Build System
+
+* **dist:** change built files ([0b48d64](https://github.com/twekz/dpe-labels/commit/0b48d64af19e9750f91609a2a1db4555145f7538))
+
 ## [0.2.1](https://github.com/twekz/dpe-labels/compare/0.2.0...0.2.1) (2024-09-03)
 
 

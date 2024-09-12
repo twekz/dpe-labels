@@ -14,7 +14,7 @@ Par exemple :
   <title>Mon annonce immo</title>
 
   <link rel="stylesheet" href="dpe-labels.css">
-  <script type="module" src="dpe-labels.js"></script>
+  <script type="module" src="dpe-labels.min.js"></script>
 </head>
 <body>
   <h1>Annonce : bien à louer</h1>

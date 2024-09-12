@@ -49,5 +49,5 @@ responsable des erreurs, omissions ou interprétations incorrectes des dispositi
 
 ## Licence
 
-Cette librairie est publiée sous Licence Publique Générale (GNU GPL version 3). Voir le
+Cette librairie est publiée sous Licence MIT. Voir le
 [fichier de licence](https://github.com/twekz/dpe-labels/blob/main/LICENSE) pour les détails.

@@ -4,7 +4,7 @@
 
 Cette librairie nécessite de charger deux fichiers dans votre page HTML&nbsp;:
 
-- Le script `dpe-labels.js`
+- Le script `dpe-labels[.min].js`
 - Le style `dpe-labels.css`
 
 Il est recommandé d'ajouter les deux lignes suivantes entre les balises `<head>…</head>` de la
@@ -19,7 +19,7 @@ Par exemple :
   <title>Mon annonce immo</title>
   <link rel="stylesheet" href="mon-style.css">
   <link rel="stylesheet" href="dpe-labels.css">
-  <script type="module" src="dpe-labels.js"></script>
+  <script type="module" src="dpe-labels.min.js"></script>
 </head>
 <body>
   <!-- mon contenu  -->
@@ -38,7 +38,6 @@ installant le paquet `dpe-labels` pour les intégrer dans votre page ou template
 $ npm install dpe-labels
 ```
 
-[//]: # (<!--)
 ### CDN
 
 Sinon, vous pouvez directement récupérer les fichiers nécessaires auprès d'un service de CDN&nbsp;:
@@ -46,19 +45,16 @@ Sinon, vous pouvez directement récupérer les fichiers nécessaires auprès d'u
 #### jsDelivr
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dpe-labels@0.2.0/dist/dpe-labels.css">
-<script type="module" src="https://cdn.jsdelivr.net/npm/dpe-labels@0.2.0/dist/dpe-labels.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dpe-labels@0.3.0/dist/dpe-labels.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/dpe-labels@0.3.0/dist/dpe-labels.min.js"></script>
 ```
 
 #### unpkg
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/dpe-labels@0.2.0/dist/dpe-labels.css">
-<script type="module" src="https://unpkg.com/dpe-labels@0.2.0/dist/dpe-labels.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/dpe-labels@0.3.0/dist/dpe-labels.css">
+<script type="module" src="https://unpkg.com/dpe-labels@0.3.0/dist/dpe-labels.min.js"></script>
 ```
-
-[//]: # (-->)
-
 
 ## Compatibilité avec les frameworks
 
