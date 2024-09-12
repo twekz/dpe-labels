@@ -67,6 +67,9 @@
     "vitest": "^2.0.4",
     "vue": "^3.4.38"
   },
+  "engines": {
+    "node": "^20"
+  },
   "config": {
     "commitizen": {
       "path": "@commitlint/cz-commitlint"
