@@ -8,16 +8,17 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'lib/index.ts'),
-      fileName: 'dpe-labels',
     },
     sourcemap: true,
     rollupOptions: {
       output: [
         {
+          assetFileNames: 'dpe-labels.[ext]',
           entryFileNames: 'dpe-labels.js',
           format: 'es',
         },
         {
+          assetFileNames: 'dpe-labels.[ext]',
           entryFileNames: 'dpe-labels.min.js',
           format: 'es',
           plugins: [minify()],
