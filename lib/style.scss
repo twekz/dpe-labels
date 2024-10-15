@@ -131,30 +131,47 @@ $MIN_HEIGHT: 180px;
 
   &-values {
     display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: end;
     height: var(--dpe-bar-height);
     border: $borderWidth solid var(--dpe-border-color);
     border-top-left-radius: .25rem;
     border-bottom-left-radius: .25rem;
     border-right-width: 0;
+
+    &-table {
+      display: table;
+      width: 100%;
+
+      &-row {
+        display: table-row;
+
+        .dpe-value-title,
+        .dpe-value {
+          display: table-cell;
+          text-align: center;
+        }
+      }
+
+      &-row + &-row .dpe-value {
+        height: calc(var(--dpe-bar-height) - 2 * #{$borderWidth});
+      }
+    }
   }
 
   &-value {
     flex: 1 1 auto;
     background-color: var(--dpe-background-color);
-    text-align: center;
     padding: 0 .25rem;
     font-weight: bold;
     position: relative;
-    line-height: 1.2;
-
+    line-height: 1.1;
+    vertical-align: middle;
 
     &-title {
       font-size: var(--dpe-legend-font-size, .6em); // TODO add to config
-      left: 0;
-      right: 0;
-      margin-bottom: 2em;
+      vertical-align: bottom;
+      padding-bottom: .5em;
 
       > div {
         color: var(--dpe-color-gray);

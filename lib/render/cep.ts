@@ -8,17 +8,23 @@ function renderCEPRow (grade: string, _row: string, cep: string, eges: string) {
   let row = `<div class="${classes.join(' ')}"><div class="dpe-table-cell">`;
   if (isActive) {
     row += `<div class="dpe-values">
-      <div class="dpe-value">
-        <div class="dpe-value-title" style="margin-top:-4.5em">consommation<div>(énergie primaire)</div></div>
-        <div class="dpe-value-nb">${cep}</div>
-        <div class="dpe-value-legend"><span>kWh/m<sup>2</sup></span><span>/an</span></div>
+      <div class="dpe-values-table">
+        <div class="dpe-values-table-row">
+          <div class="dpe-value-title">consommation<div>(énergie primaire)</div></div>
+          <div class="dpe-value-title">émissions</div>
+        </div>
+        <div class="dpe-values-table-row">
+          <div class="dpe-value">
+            <div class="dpe-value-nb">${cep}</div>
+            <div class="dpe-value-legend"><span>kWh/m<sup>2</sup></span><span>/an</span></div>
+        </div>
+        <div class="dpe-value">
+          <div class="dpe-value-nb">${eges}*</div>
+          <div class="dpe-value-legend"><span>kg</span>&nbsp;<span>CO<sub>2</sub></span><span>/m<sup>2</sup></span><span>/an</span></div>
+        </div>
       </div>
-      <div class="dpe-value">
-        <div class="dpe-value-title" style="margin-top:-3em">émissions</div>
-        <div class="dpe-value-nb">${eges}*</div>
-        <div class="dpe-value-legend"><span>kg</span>&nbsp;<span>CO<sub>2</sub></span><span>/m<sup>2</sup></span><span>/an</span></div>
-      </div>
-    </div>`;
+    </div>
+  </div>`;
   }
   row += `</div>
   <div class="dpe-table-cell--bar">
