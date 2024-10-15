@@ -32,7 +32,7 @@ Les étiquettes DPE héritent de leur container.
 ```
 ```css
 .wrapper-demo {
-  --dpe-labels--active-border-color: dodgerblue;
+  --dpe-labels--active-border-color: orangered;
   font-family: 'Comic Sans MS', cursive;
   padding: 1em;
   color: dodgerblue;
