@@ -32,9 +32,10 @@ Les étiquettes DPE héritent de leur container.
 ```
 ```css
 .wrapper-demo {
+  --dpe-labels--active-border-color: dodgerblue;
   font-family: 'Comic Sans MS', cursive;
   padding: 1em;
-  color: var(--vp-c-brand);
+  color: dodgerblue;
 }
 ```
 :::
@@ -51,9 +52,10 @@ Les étiquettes DPE héritent de leur container.
 
 <style>
   .wrapper-demo {
+    --dpe-labels--active-border-color: orangered;
     font-family: 'Comic Sans MS', cursive;
     padding: 1em;
-    color: var(--vp-c-brand);
+    color: dodgerblue;
   }
 </style>
 
@@ -61,7 +63,16 @@ Les étiquettes DPE héritent de leur container.
 
 ## Variables CSS
 
-::: info
-**DPE Labels** va mettre des variables CSS à disposition pour personnaliser certains aspects du
-style des étiquettes. Elles seront bientôt documentées.
-:::
+| Variable name                                | Default value | Notes                                |
+|----------------------------------------------|---------------|--------------------------------------|
+| **`--dpe-labels--color`**                    | `inherit`     | Couleur du texte (titres, légendes)  |
+| **`--dpe-labels--color-gray`**               | `gray`        | Couleur des légendes secondaires     |
+| **`--dpe-labels--active-border-color`**      | `black`       | Couleur des contours (barres)        |
+| **`--dpe-labels--active-text-stroke-color`** | `black`       | Couleur des contours (lettres)       |
+| **`--dpe-labels--bar-height--cep`**          | `2.5rem`      | Hauteur des barres "énergie"         |
+| **`--dpe-labels--bar-height--eges`**         | `1.75rem`     | Hauteur des barres "GES"             |
+| **`--dpe-labels--bar-gap`**                  | `0.25rem`     | Espacement entre les barres          |
+| **`--dpe-labels--gutter`**                   | `2em`         | Espacement entre les deux graphiques |
+| **`--dpe-labels--z-index`**                  | `10`          |                                      |
+| **`--dpe-labels--font-family`**              | `inherit`     |                                      |
+| **`--dpe-labels--font-size-base`**           | `1em`         |                                      |
