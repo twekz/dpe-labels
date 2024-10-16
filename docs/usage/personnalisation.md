@@ -14,13 +14,22 @@ next: false
 
 # Personnalisation
 
-## Héritage
+**DPE Labels** génère des étiquettes DPE transparentes et qui héritent de leur conteneur, permettant une meilleure intégration visuelle sur une page web.
 
-Les étiquettes DPE héritent de leur container.
+Un certain nombre de [variables CSS](#reference-des-variables-css) sont également mises à disposition pour personnaliser les éléments des étiquettes DPE de manière plus précise.
 
-### Exemple
+## Exemple
 
 ::: code-group
+```css
+.wrapper-demo {
+  --dpe-labels--active-bar-border-color: orangered;
+  background-color: cornsilk;
+  color: dodgerblue;
+  font-family: 'Comic Sans MS', cursive;
+  padding: 1em;
+}
+```
 ```html
 <div class="wrapper-demo">
   <div
@@ -29,14 +38,6 @@ Les étiquettes DPE héritent de leur container.
     data-dpe-eges="45"
   ></div>
 </div>
-```
-```css
-.wrapper-demo {
-  --dpe-labels--active-border-color: orangered;
-  font-family: 'Comic Sans MS', cursive;
-  padding: 1em;
-  color: dodgerblue;
-}
 ```
 :::
 
@@ -52,27 +53,28 @@ Les étiquettes DPE héritent de leur container.
 
 <style>
   .wrapper-demo {
-    --dpe-labels--active-border-color: orangered;
+    --dpe-labels--active-bar-border-color: orangered;
+    background-color: cornsilk;
+    color: dodgerblue;
     font-family: 'Comic Sans MS', cursive;
     padding: 1em;
-    color: dodgerblue;
   }
 </style>
 
 
 
-## Variables CSS
+## Référence des variables CSS
 
 | Variable name                                | Default value | Notes                                |
 |----------------------------------------------|---------------|--------------------------------------|
 | **`--dpe-labels--color`**                    | `inherit`     | Couleur du texte (titres, légendes)  |
-| **`--dpe-labels--color-gray`**               | `gray`        | Couleur des légendes secondaires     |
-| **`--dpe-labels--active-border-color`**      | `black`       | Couleur des contours (barres)        |
-| **`--dpe-labels--active-text-stroke-color`** | `black`       | Couleur des contours (lettres)       |
+| **`--dpe-labels--color-alt`**                | `gray`        | Couleur des légendes secondaires     |
+| **`--dpe-labels--active-bar-border-color`**  | `black`       | Couleur des contours (barres)        |
+| **`--dpe-labels--active-text-border-color`** | `black`       | Couleur des contours (lettres)       |
 | **`--dpe-labels--bar-height--cep`**          | `2.5rem`      | Hauteur des barres "énergie"         |
 | **`--dpe-labels--bar-height--eges`**         | `1.75rem`     | Hauteur des barres "GES"             |
 | **`--dpe-labels--bar-gap`**                  | `0.25rem`     | Espacement entre les barres          |
 | **`--dpe-labels--gutter`**                   | `2em`         | Espacement entre les deux graphiques |
-| **`--dpe-labels--z-index`**                  | `10`          |                                      |
+| **`--dpe-labels--z-index-base`**             | `10`          |                                      |
 | **`--dpe-labels--font-family`**              | `inherit`     |                                      |
 | **`--dpe-labels--font-size-base`**           | `1em`         |                                      |
