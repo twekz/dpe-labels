@@ -1,5 +1,21 @@
 
 
+## [0.4.0](https://github.com/twekz/dpe-labels/compare/0.3.0...0.4.0) (2024-10-16)
+
+
+### Features
+
+* **css:** expose CSS variables for customization ([a2ba593](https://github.com/twekz/dpe-labels/commit/a2ba5939c99c20547293dc2f28e23d6f8ca3fa48))
+
+
+### Bug Fixes
+
+* **css:** rename css variables with cleaner names ([e410e21](https://github.com/twekz/dpe-labels/commit/e410e21275ec66cf6965d0709ed05a949c65cfde))
+* **css:** rename css variables with cleaner names ([246c433](https://github.com/twekz/dpe-labels/commit/246c433098ea6475c6bdd8f0017a94225cce2a94))
+* **docs:** fix inconsistent demo ([9d0f204](https://github.com/twekz/dpe-labels/commit/9d0f2041e86e54c5215d3dbc8bca2f05388b8ae1))
+* **style:** adjust columns width ratio ([459d1cd](https://github.com/twekz/dpe-labels/commit/459d1cd68ec0b9f672a01364052c6be4b5919c01))
+* **style:** prevent CEP value title overflow ([d42e5bc](https://github.com/twekz/dpe-labels/commit/d42e5bc505e26622e34b27180c90b87fa8578a11))
+
 ## [0.3.0](https://github.com/twekz/dpe-labels/compare/0.2.1...0.3.0) (2024-09-12)
 
 
