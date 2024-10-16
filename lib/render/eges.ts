@@ -11,7 +11,7 @@ function renderEGESRow (grade: string, _row: string, eges: string): string {
   </div>
   <div class="dpe-table-cell">`;
   if (active) {
-    row += `<div class="dpe-label">
+    row += `<div class="dpe-tag">
       <div class="dpe-value">
         <div class="dpe-value-nb">${eges}</div>
         <div class="dpe-value-legend">kg&nbsp;CO<sub>2</sub>/m<sup>2</sup>/an</div>
