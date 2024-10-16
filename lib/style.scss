@@ -42,10 +42,10 @@ $MIN_HEIGHT: 180px;
 
 :root {
   --dpe-labels--color: inherit;
-  --dpe-labels--color-gray: gray;
+  --dpe-labels--color-alt: gray;
 
-  --dpe-labels--active-border-color: black;
-  --dpe-labels--active-text-stroke-color: black;
+  --dpe-labels--active-bar-border-color: black;
+  --dpe-labels--active-text-border-color: black;
 
   --dpe-labels--font-family: inherit;
   --dpe-labels--font-size-base: 1em;
@@ -57,7 +57,7 @@ $MIN_HEIGHT: 180px;
 
   --dpe-labels--gutter: 2em;
 
-  --dpe-labels--z-index: 10;
+  --dpe-labels--z-index-base: 10;
 }
 
 .dpe {
@@ -100,7 +100,7 @@ $MIN_HEIGHT: 180px;
     min-width: $MIN_WIDTH;
     min-height: $MIN_HEIGHT;
     position: relative;
-    z-index: var(--dpe-labels--z-index);
+    z-index: var(--dpe-labels--z-index-base);
   }
 
   & figcaption {
@@ -202,7 +202,7 @@ $MIN_HEIGHT: 180px;
       line-height: 1.1;
 
       > div {
-        color: var(--dpe-labels--color-gray);
+        color: var(--dpe-labels--color-alt);
       }
     }
 
@@ -291,7 +291,7 @@ $MIN_HEIGHT: 180px;
       $stroke2 -1*$stroke2 var(--dpe-labels--text-stroke-color),
       -1*$stroke2 $stroke2 var(--dpe-labels--text-stroke-color);
     position: relative;
-    z-index: calc(var(--dpe-labels--z-index) + 2);
+    z-index: calc(var(--dpe-labels--z-index-base) + 2);
   }
 
   &-bar-end-shape {
@@ -301,7 +301,7 @@ $MIN_HEIGHT: 180px;
     height: 100%;
     width: 100%;
     position: relative;
-    z-index: calc(var(--dpe-labels--z-index) + 1);
+    z-index: calc(var(--dpe-labels--z-index-base) + 1);
   }
 
   &--cep {
@@ -353,8 +353,8 @@ $MIN_HEIGHT: 180px;
   }
 
   &-table-row.active {
-    --dpe-labels--border-color: var(--dpe-labels--active-border-color);
-    --dpe-labels--text-stroke-color: var(--dpe-labels--active-text-stroke-color);
+    --dpe-labels--border-color: var(--dpe-labels--active-bar-border-color);
+    --dpe-labels--text-stroke-color: var(--dpe-labels--active-text-border-color);
   }
 
   &--cep &-table-row.active {
@@ -384,13 +384,13 @@ $MIN_HEIGHT: 180px;
     width: calc(40% - #{$borderWidth} * 2);
     height: calc(var(--dpe-labels--bar-height) * 2 + var(--dpe-labels--bar-gap));
     bottom: calc(var(--dpe-labels--bar-gap) * 0.5);
-    border-right: $borderWidth solid var(--dpe-labels--color-gray);
+    border-right: $borderWidth solid var(--dpe-labels--color-alt);
     display: flex;
     flex-flow: row;
     justify-content: flex-end;
     align-items: center;
     padding: .25rem;
-    color: var(--dpe-labels--color-gray);
+    color: var(--dpe-labels--color-alt);
     font-size: var(--dpe-labels--legend-font-size, .6em);
   }
 }
